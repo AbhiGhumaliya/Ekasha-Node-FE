@@ -1,0 +1,26 @@
+default:
+  image: node:20
+
+stages:
+  - build
+
+build:
+  stage: build
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - node_modules/
+  variables:
+    CI: "false"     # This is to disable treating warnings as errors
+    BUILD_PATH: "/opt/gitlab-runner-common/ekasha-frontend"
+  script:
+    - yarn
+    - yarn run build
+  # Restrict pipeline to main branch only
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "QA"'
+  
+# Run frontend testcases
+    

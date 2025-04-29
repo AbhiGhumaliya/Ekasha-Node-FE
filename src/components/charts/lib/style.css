@@ -1,0 +1,366 @@
+.tooltip {
+  position: absolute;
+  text-align-last: left;
+  word-spacing: normal;
+  line-height: 18px;
+  background: #000000;
+  color: #b4b4b4;
+  z-index: 1;
+  padding: 4px 5px 5px 9px;
+  border-radius: 2px 25px 25px 30px;
+  text-transform: capitalize;
+  pointer-events: none;
+  visibility: hidden;
+  box-shadow: 0 1 3px #4e8bff;
+}
+
+.nodatas {
+  font-size: 12px !important;
+  color: white !important;
+  top: 50%;
+  margin: 0;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  position: absolute !important;
+}
+.StBarXlable {
+  font-size: 12px;
+  fill: #a4a9af;
+}
+
+.StBarYlable,
+.newBarXlable {
+  font-size: 12px;
+  fill: #a4a9af;
+}
+
+.listh-content {
+  overflow: auto;
+  overflow-y: hidden;
+  bottom: 1px;
+  height: 36px;
+  color: #a4a9af;
+}
+
+.listh-content ul {
+  list-style: none outside none;
+  white-space: nowrap;
+  height: 10px;
+  padding: 0;
+}
+
+.listh-content ul li {
+  display: inline;
+  padding: 0px 12px 2px 10px;
+}
+.listh-content ul li:first-child {
+  padding: 0px 12px 2px 0px;
+}
+.listh-content ul li:last-child {
+  padding: 0px 0px 2px 10px;
+}
+
+.listh-list {
+  margin: 0px 0px 1px 0px;
+}
+.offbutton, .nutral {
+  border-radius: 10px;
+  margin-left: 3px;
+}
+.nodatas {
+  text-align: center;
+}
+
+.newBarXaxis {
+  fill: #535960;
+  font-size: 10px;
+  font-family: inherit;
+  text-transform: capitalize;
+}
+.overflow{
+  transform: translateY(10px) translateX(-25px) rotate(
+    -45deg
+    )
+}
+.newBarYlable {
+  transform: rotate(-90deg);
+  text-anchor: middle;
+  font-size: 12px;
+  fill: #a4a9af !important;
+}
+
+rect.mover {
+  stroke: #818a96;
+  stroke-width: 1px;
+  stroke-opacity: 0.4;
+  fill: #141415;
+  fill-opacity: 0.5;
+}
+
+.TableBody {
+  color: #60656f;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.TableData {
+  padding: 7px 8px 7px 4px;
+  border-bottom: 1px solid #1c1e20;
+  word-break: break-all;
+}
+
+.TableBody tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+.TableBody tr:nth-child(even):hover {
+  background-color: #353a45;
+}
+
+.tableHd-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.firsttab {
+  padding-top: 30px;
+  padding-bottom: 25px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.hover1 {
+  fill: red !important;
+}
+
+.hover1:hover {
+  fill: green !important;
+}
+.horizontalBar_Svg,
+.line_Svg {
+  color: #a4a9af;
+}
+.newLineYaxis, .newLineXaxis{
+  fill: #535960;
+}
+.kpiNewLineYaxis {
+  fill: #5F6163;
+}
+.kpiNewLineXaxis{
+  color: #FDFDFD;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+.domain {
+  stroke: #535960;
+}
+.pieli:hover,
+.ringli:hover {
+  cursor: pointer;
+  background-color: #353a45;
+}
+.li-content {
+  padding: 0 3px;
+  padding-left: 9px;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  /* max-height: 170px; */
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #a4a9af;
+}
+
+.li-content::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+.li-content:hover::-webkit-scrollbar-thumb {
+  background-color: #31363f !important;
+}
+
+.li-content ul {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.li-content ul li {
+  padding: 7px;
+  display: list-item;
+  list-style-type: none;
+  margin: 0px -1px -1px -8px;
+  border-bottom: 1px solid #202020;
+}
+.li-items ul {
+  padding: 0 !important;
+}
+/* width */
+.scrollstyle::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+.scrollstyle::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+.scrollstyle::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+/* Handle on hover */
+.scrollstyle::-webkit-scrollbar-thumb:hover,
+.scroll-tabs::-webkit-scrollbar-thumb {
+  background: #31363f !important;
+}
+/* // new line */
+.newLineXLable {
+  font-size: 12px;
+  fill: #a4a9af;
+}
+
+.newLineYLable {
+  font-size: 12px;
+  fill: #a4a9af;
+}
+/*new tool tips Line*/
+.Ytooltip {
+  position: absolute;
+  text-align-last: left;
+  word-spacing: 2px;
+  line-height: normal;
+  padding: 3px 10px 4px 10px;
+  color: #ffffff;
+  border: 0px;
+  opacity: 0px;
+  z-index: 1;
+  pointer-events: none;
+  visibility: hidden;
+}
+.NewPieChart,
+.NewRingchart,
+.nutral,
+.TableTR {
+  cursor: pointer !important;
+}
+.offbutton {
+  cursor: pointer;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+/* radarChart*/
+.newRadarGrid {
+  fill-opacity: 0.1;
+}
+
+.newRadarGridLable {
+  font-size: 9px;
+  fill: #535960;
+}
+
+.newRadarGridLine {
+  stroke: #535960;
+  stroke-width: 1.2px;
+}
+
+.newRadarLable {
+  font-size: 11px;
+  text-anchor: middle;
+  fill: #535960;
+  overflow: visible;
+}
+
+.newRadarBack {
+  fill: none;
+  stroke-width: 2;
+}
+/* dendogram */
+.DendoText {
+  display: none;
+}
+.foreignObject{
+  width: 117px;
+  height: 22px;
+  y: 4px;
+  x: -56px;
+}
+.bodyBar {
+  width: 112px;
+  margin: auto;
+  height: fit-content;
+  background-color: #171819 !important;
+}
+.textover{
+  white-space: nowrap;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #52585f;
+  font-size: 10px;
+}
+
+.newAreaXaxis{
+  fill: #535960;
+  font-size: 10px;
+  font-family: inherit;
+  text-transform: capitalize;
+  transform: translateY(10px) rotate(
+    315deg
+    );
+}
+/* .StBarXaxis {
+  fill: #535960;
+  font-size: 10px;
+  font-family: inherit;
+  text-transform: capitalize;
+  transform: translate(0px,10px) rotate(
+    315deg
+    );
+} */
+
+.newAreaYaxis {
+  color: #a4a9af;
+}
+/* Funnel2 chart */
+
+.funnelFword {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 1.44px;
+  text-align: left;
+  fill: #17c3fc;
+}
+
+.funnelPer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 2.16px;
+  text-align: left;
+  fill: #ffffff;
+}

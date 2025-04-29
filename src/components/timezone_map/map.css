@@ -1,0 +1,145 @@
+#Map-container {
+  width: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important; 
+  background-size: cover !important;
+  position: relative;
+}
+.notImgMapBack {
+  background-image: none;
+}
+.imageMapBack {
+  background-image: url("./Canvas 001.svg") !important;
+}
+
+.centerSVG{
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+}
+
+.map-axis-x {
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  border-left: 1px solid #335099;
+  width: 0;
+  transition: left 50ms ease-out;
+}
+
+.map-axis-y {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #335099;
+  height: 0;
+  transition: top 50ms ease-out;
+}
+
+/* all the countries */
+.country {
+  stroke: #4d5569;
+  stroke-width: 0.50px;
+  fill: transparent;
+  /* fill: #4d5569; */
+}
+
+.country:hover{
+  stroke: #4d5569;
+  stroke-width: 1px;
+}
+
+.countryHover {
+  stroke: #aaaaaa !important;
+  stroke-width: 0.25px;
+  fill: #002e54;
+}
+
+.regionHover {
+  stroke: #aaaaaa !important;
+  stroke-width: 0.25px;
+  fill: #002e54;
+}
+
+.country-on {
+  stroke: #aaaaaa !important;
+  stroke-width: 0.25px;
+  fill: #002e54;
+}
+
+.selectedCountry {
+  stroke: #3ac0ac;
+  stroke-width: .50px;
+  fill: #3ac0ac;
+  cursor: pointer;
+  fill-opacity: 1;
+}
+
+/* all the dots */
+.timezone {
+  fill: #c8ff00;
+  stroke: #c8ff00;
+}
+
+.timezone:hover{
+  fill:#c8ff00 !important;
+  stroke:#c8ff00 !important;
+  cursor: pointer;
+}
+
+.selectedTimezone{
+  fill:transparent !important;
+  stroke: transparent;
+  stroke-width: 2px;
+  r:1.5;
+}
+
+.timezone-on {
+  fill: #c8ff00;
+  /* stroke: #c8ff00; */
+  fill-opacity: 1 !important;
+}
+
+.selectPath {
+  fill-opacity: 1 !important;
+}
+
+
+/* country name print */
+div.Maptooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  color: #3AC0AC;
+  font-size: 14px !important;
+  letter-spacing: 0.7px !important;
+  background: transparent;
+  word-break: break-word;
+  white-space: normal;
+  font-weight: bold !important;
+  line-height: 18px;
+  font-weight: 600 !important;
+  font-family: HelveticaNeue-Light !important;
+}
+
+#time {
+  margin: 10px 10%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  height: 100%;
+  overflow: hidden;
+  background: #F0F8FF;
+}
+
+div.tooltip {
+  font-size: 10px !important;
+  letter-spacing: 0.7px !important;
+  word-break: break-word;
+  white-space: normal;
+  font-weight: 600 !important;
+  font-family: HelveticaNeue-Light !important;
+}

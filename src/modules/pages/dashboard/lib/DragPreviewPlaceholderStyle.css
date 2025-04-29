@@ -1,0 +1,19 @@
+.isDrop .react-grid-item.react-grid-placeholder {
+  background-image: url(./dragPreview.png) !important;
+  border: 3px dashed #2e2e3c;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-color: transparent !important;
+  opacity: 1;
+  background-size: cover !important;
+}
+
+.isMove .react-grid-item.react-grid-placeholder {
+  background-color: transparent !important;
+  background: transparent !important;
+  opacity: 1;
+  height: 279px !important;
+  width: 300px !important;
+  background-size: cover !important;
+}

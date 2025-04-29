@@ -1,0 +1,85 @@
+/*Table chart*/
+.TableChart {
+  position: relative;
+  /* border-collapse: collapse; */
+  overflow: scroll;
+  /* text-align: center; */
+  height: auto;
+  border-radius: 0.5em;
+  width: 100%;
+  margin: 0px 1px 1px 3px;
+}
+
+.tableSvgScroll::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+.tableSvgScroll:hover::-webkit-scrollbar-thumb {
+  background-color: #31363f !important;
+}
+
+.TableHeder {
+  color: rgb(154, 151, 158);
+  background-color: #1f1f1f;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.TableHeder th {
+  text-align: left;
+  /* text-align: center; */
+  padding: 7px 7px 7px 4px;
+}
+
+.TableTR {
+  border-radius: 15px;
+}
+
+.TableTR:hover {
+  background-color: #353a45;
+}
+
+.TableBody {
+  color: #60656f;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.TableData {
+  padding: 7px 8px 7px 4px;
+  border-bottom: 1px solid #1c1e20;
+  word-break: break-all;
+}
+
+.TableBody tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+.TableBody tr:nth-child(even):hover {
+  background-color: #353a45;
+}
+
+.tableHd-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.firsttab {
+  padding-top: 30px;
+  padding-bottom: 25px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.hover1 {
+  fill: red !important;
+}
+
+.hover1:hover {
+  fill: green !important;
+}

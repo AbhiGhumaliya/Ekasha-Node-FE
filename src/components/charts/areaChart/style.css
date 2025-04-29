@@ -1,0 +1,35 @@
+.offbutton {
+  border-radius: 10px;
+  margin-left: 3px;
+}
+
+.AreaYaxis {
+  fill: #535960;
+  text-anchor: end;
+  font-size: 10px;
+}
+
+.newAreaXlable {
+  text-anchor: middle;
+  font-style: "Roboto";
+  font-size: 12px;
+  fill: #a4a9af;
+}
+
+.newAreaYlable {
+  text-anchor: middle;
+  font-size: 12px;
+  fill: #a4a9af;
+}
+.MouseLine {
+  stroke: white;
+  stroke-dasharray: 3.3;
+  stroke-width: 0.3px;
+  opacity: 0px;
+}
+
+.Mousecircle {
+  fill: none;
+  stroke-width: 2px;
+  opacity: 0px;
+}

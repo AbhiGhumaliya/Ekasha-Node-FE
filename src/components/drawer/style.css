@@ -1,0 +1,132 @@
+.zSDrawerWrap {
+  z-index: 1000000;
+  position: absolute;
+  top: 110px;
+  right: -286px;
+  height: calc(100% - 145px);
+  transition: width 0.8s, right 0.5s;
+  width: 0px;
+  -webkit-transition: width 0.8s, right 0.5s;
+  -moz-transition: width 0.8s, right 0.5s;
+  -ms-transition: width 0.8s, right 0.5s;
+  -o-transition: width 0.8s, right 0.5s;
+}
+.userGroupOpen {
+  width: 639px !important;
+}
+.backmask {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+.userDrawer .zsDrawer {
+  background-color: #171818;
+}
+
+.userDrawer .zsDrawerHeader {
+  background-color: #0b0b0b;
+}
+
+.panelDrawerClass .zsDrawerBody {
+  display: flex;
+}
+
+.panelDrawerClassOpen {
+  width: 1007px !important;
+}
+
+.panelDrawerClassOpen .openListPanleCreate {
+  margin-left: 721px !important;
+}
+
+.drawerMask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+}
+
+.drawerShow {
+  width: 100% !important;
+  padding: 5px 0 !important;
+  transition: width 0.8s, padding 0.5s;
+}
+.drawerClose {
+  width: 100% !important;
+  padding: 5px 0 !important;
+  transition: width 0.8s, padding 0.5s;
+}
+
+.zsDrawer {
+  width: 0px;
+  height: 100%;
+  z-index: 999999;
+  border-radius: 7px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.12);
+  background-color: #18191a;
+  padding: 0;
+  /* position: absolute; */
+  right: 0;
+  overflow: hidden;
+  transition: width 0.8s, padding 0.5s;
+}
+
+.zsDrawerHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 271px;
+  padding: 15px;
+  height: 50px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #535960;
+}
+
+.zsDrawerTitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.zsDrawerClose text {
+  cursor: pointer;
+  fill: #535960;
+}
+
+.zsDrawerBody {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+}
+
+.drawerContent {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  padding: 0 15px;
+}
+.drawerContent::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px;
+}
+.zsDrawerBodyWF {
+  height: calc(100% - 160px) !important;
+}
+
+.drawerFooterContent {
+  padding: 35px 15px;
+  height: 71px;
+  width: 271px;
+  background-color: #0b0b0b;
+}

@@ -1,0 +1,108 @@
+{
+  "name": "ekasha",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.3.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.16.5",
+    "axios": "^0.21.1",
+    "babel-eslint": "^10.1.0",
+    "connected-react-router": "^6.9.1",
+    "crypto-js": "^4.2.0",
+    "d3": "5.15.0",
+    "history": "^5.0.0",
+    "jest-junit": "^16.0.0",
+    "jointjs": "^3.7.7",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.37",
+    "net": "^1.0.2",
+    "nprogress": "^0.2.0",
+    "nth-check": "^2.1.1",
+    "react-datetime": "^3.0.4",
+    "react-dnd": "^10.0.2",
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dom": "^18.2.0",
+    "react-grid-layout": "1.3.4",
+    "react-idle-timer": "^5.7.2",
+    "react-json-view": "^1.21.3",
+    "react-redux": "^7.2.3",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-virtualized-auto-sizer": "^1.0.7",
+    "react-visjs-timeline": "^1.6.0",
+    "react-window": "^1.8.8",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.68.0",
+    "searchable-react-json-view": "^0.0.8",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3",
+    "styled-components": "^5.2.3",
+    "vis": "^4.21.0-EOL",
+    "vis-timeline": "^7.4.9"
+  },
+  "scripts": {
+    "start": "set HTTPS=true&&react-scripts start",
+    "start2": "HTTPS=true react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "test": "react-scripts test --watchAll=false --silent=false --verbose",
+    "test1": "react-scripts test --watchAll=false --silent=false --verbose --coverage",
+    "test:ci": "yarn run test -- --testResultsProcessor=\"jest-junit\" --ci",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!src/modules/containers/playbook/**",
+      "!src/modules/containers/incidents/subModule/playbook/**",
+      "!src/modules/pages/playbook/**",
+      "!src/modules/pages/incidents/lib/subModule/playbook/**",
+      "!src/apis/playbook/**",
+      "!src/apis/incidents/subModule/Playbook/**",
+      "!src/modules/pages/authentication/lib/setup/**",
+      "!src/apis/authentication/lib/setup/**",
+      "!src/modules/containers/authentication/lib/setup.js"
+    ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
+    "check-prop-types": "^1.1.2",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "redux-mock-store": "^1.5.4",
+    "webpack-bundle-analyzer": "^4.9.1"
+  }
+}
