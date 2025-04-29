@@ -85,7 +85,7 @@ const SignIn = (props) => {
           setLoading(true);
           const eventLoading = {
             username: userId1.value,
-            password: encryptPassword(password2.value),
+            password: password2.value,
             authType: localAuth2.checked,
             session: 'login',
           };
@@ -150,13 +150,13 @@ const SignIn = (props) => {
       if (sessionType === 'logout') {
         signInAction({
           username,
-          password: encryptPassword(password),
+          password,
           authType,
           session: sessionType,
         });
       } else {
         signInAction({
-          username, password: encryptPassword(password), authType, session: 'login',
+          username, password, authType, session: 'login',
         });
       }
     }

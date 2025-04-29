@@ -5,17 +5,14 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { Redirect } from 'react-router';
 import EkashaWraper from './lib/EkashaWrapper';
-import { stompClient, reConnect } from '../../helpers/lib/SocketHandlers';
 import {
-  clearLocalData, handleStorageChange, witing,
+  handleStorageChange, witing,
 } from '../../helpers/lib/StorageHandlers';
 import ekasaLogo from '../../assets/images/logo.svg';
 import { history, store } from '../../configurations/redux/Store';
 import { TimeFilContext } from './TimeFilterContext';
 import { retryLazy } from '../../helpers/envData';
 import { getTimeZone, getUserPermissions } from '../../apis/authentication/auth.actions';
-
-let subscribe = null;
 
 const TopBarEkasha = lazy(() => retryLazy(() => import('../../components/layout/TopBar/TopBarEkasha')));
 const SideBar = lazy(() => retryLazy(() => import('../../components/layout/SideBar')));
@@ -39,7 +36,7 @@ const Page = (props) => {
     timeFilter: localStorage.getItem('timeFilter'),
   }]);
 
-  const [proFile, setProfile] = useState(JSON.parse(localStorage.getItem('U_PROFILE')));
+  // const [proFile, setProfile] = useState(JSON.parse(localStorage.getItem('U_PROFILE')));
   if (!localStorage.getItem('U_TOKENS')) {
     localStorage.clear();
     history.push('/');
@@ -72,92 +69,95 @@ const Page = (props) => {
     };
   }, []);
 
-  const onProfileReceived = (payload) => {
-    const dataRes = JSON.parse(payload.body);
-    if (dataRes.module === 'session') {
-      if (dataRes.operation === 'remove') {
-        if (dataRes.status && dataRes.data === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
-          clearLocalData();
-          window.location.reload();
-        }
-      }
-    }
-    if (dataRes.module === 'timeZone') {
-      if (dataRes.operation === 'update') {
-        if (dataRes.status) {
-          clearLocalData();
-          window.location.reload();
-        }
-      }
-    }
-    if (dataRes.module === 'user') {
-      switch (dataRes.operation) {
-        case 'update':
-          if (dataRes.status) {
-            if (dataRes.data.token === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
-              const userProfile = {};
-              userProfile.contact = dataRes.data.contactNum;
-              userProfile.email = dataRes.data.email;
-              userProfile.fullname = `${dataRes.data.firstName} ${dataRes.data.lastName}`;
-              userProfile.groupName = dataRes.data.groupName;
-              userProfile.userName = dataRes.data.username;
-              userProfile.role = dataRes.data.userRoleToken;
-              if (dataRes.data.userRoleToken !== JSON.parse(localStorage.getItem('U_TOKENS')).roleToken) {
-                localStorage.clear();
-                window.location.href = '/';
-              }
-              setProfile(userProfile);
-              const tokens = JSON.parse(localStorage.getItem('U_TOKENS'));
-              tokens.groupToken = dataRes.data.groupToken;
-              localStorage.setItem('U_TOKENS', JSON.stringify(Object.assign(tokens)));
-              localStorage.setItem('U_PROFILE', JSON.stringify(userProfile));
-            }
-          }
-          break;
-        case 'delete':
-          if (dataRes.status) {
-            if (dataRes.data === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
-              localStorage.clear();
-              window.location.href = '/';
-            }
-          }
-          break;
-        case 'updateStatus':
-          if (dataRes.status) {
-            if (dataRes.data === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
-              clearLocalData();
-              window.location.reload();
-            }
-          }
-          break;
-        default:
-          break;
-      }
-    }
-  };
+  // const onProfileReceived = (payload) => {
+  //   const dataRes = JSON.parse(payload.body);
+  //   if (dataRes.module === 'session') {
+  //     if (dataRes.operation === 'remove') {
+  //       if (dataRes.status && dataRes.data ===
+  //  JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
+  //         clearLocalData();
+  //         window.location.reload();
+  //       }
+  //     }
+  //   }
+  //   if (dataRes.module === 'timeZone') {
+  //     if (dataRes.operation === 'update') {
+  //       if (dataRes.status) {
+  //         clearLocalData();
+  //         window.location.reload();
+  //       }
+  //     }
+  //   }
+  //   if (dataRes.module === 'user') {
+  //     switch (dataRes.operation) {
+  //       case 'update':
+  //         if (dataRes.status) {
+  //           if (dataRes.data.token === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
+  //             const userProfile = {};
+  //             userProfile.contact = dataRes.data.contactNum;
+  //             userProfile.email = dataRes.data.email;
+  //             userProfile.fullname = `${dataRes.data.firstName} ${dataRes.data.lastName}`;
+  //             userProfile.groupName = dataRes.data.groupName;
+  //             userProfile.userName = dataRes.data.username;
+  //             userProfile.role = dataRes.data.userRoleToken;
+  //             if (dataRes.data.userRoleToken !==
+  //  JSON.parse(localStorage.getItem('U_TOKENS')).roleToken) {
+  //               localStorage.clear();
+  //               window.location.href = '/';
+  //             }
+  //             setProfile(userProfile);
+  //             const tokens = JSON.parse(localStorage.getItem('U_TOKENS'));
+  //             tokens.groupToken = dataRes.data.groupToken;
+  //             localStorage.setItem('U_TOKENS', JSON.stringify(Object.assign(tokens)));
+  //             localStorage.setItem('U_PROFILE', JSON.stringify(userProfile));
+  //           }
+  //         }
+  //         break;
+  //       case 'delete':
+  //         if (dataRes.status) {
+  //           if (dataRes.data === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
+  //             localStorage.clear();
+  //             window.location.href = '/';
+  //           }
+  //         }
+  //         break;
+  //       case 'updateStatus':
+  //         if (dataRes.status) {
+  //           if (dataRes.data === JSON.parse(localStorage.getItem('U_TOKENS')).userToken) {
+  //             clearLocalData();
+  //             window.location.reload();
+  //           }
+  //         }
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   }
+  // };
 
-  const onConnected = () => {
-    console.log('Connected to server.....');
-    const channelSub = () => {
-      subscribe = stompClient.subscribe('/topic/broadcast', onProfileReceived);
-    };
-    channelSub();
-    window.addEventListener('stompClientChanged', channelSub);
-  };
+  // const onConnected = () => {
+  //   console.log('Connected to server.....');
+  //   const channelSub = () => {
+  //     subscribe = stompClient.subscribe('/topic/broadcast', onProfileReceived);
+  //   };
+  //   channelSub();
+  //   window.addEventListener('stompClientChanged', channelSub);
+  // };
 
-  useEffect(() => {
-    // eslint-disable-next-line react/prop-types
-    if (!stompClient.connected && !props.location.pathname.includes('/zeronsec/incidents/attribute/')) {
-      reConnect(onConnected);
-    }
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-    return () => {
-      if (subscribe) { subscribe.unsubscribe(); }
-      window.removeEventListener('stompClientChanged', null);
-    };
-  }, [stompClient.connected]);
+  // useEffect(() => {
+  //   // eslint-disable-next-line react/prop-types
+  //   if (!stompClient.connected &&
+  // !props.location.pathname.includes('/zeronsec/incidents/attribute/')) {
+  //     reConnect(onConnected);
+  //   }
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1500);
+  //   return () => {
+  //     if (subscribe) { subscribe.unsubscribe(); }
+  //     window.removeEventListener('stompClientChanged', null);
+  //   };
+  // }, [stompClient.connected]);
 
   return (
     <EkashaWraper>
@@ -222,7 +222,7 @@ const Page = (props) => {
                 style={{ height: '100%' }}
               >
                 <TopBarEkasha
-                  userInfo={proFile}
+                  // userInfo={proFile}
                   sideBarToggle={() => (setSideBarView(!sideBarView))}
                   setTimeFilData={setTimeFilData}
                 />
